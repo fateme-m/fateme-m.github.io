@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="todolist.css ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="mx-auto my-3  w-50 ">
+            <h1 id="header" class="text-center text-light mt-5">Todos</h1>
+            <div id="actions" class="text-center mb-3">
+                <a href="#" class="btn btn-primary" data-action="add">Add</a>
+                <a href="#" class="btn btn-success" data-action="search">Search</a>
+            </div>
+
+            <div id="form-wrapper" class=" mb-3">
+                <form id="add">
+                    <input type="text" class="form-control" name="add" placeholder="add todos :">
+                </form>
+                <!-- <form id="search">
+                    <input type="text" class="form-control" name="search" placeholder="search todos :">
+                </form> -->
+            </div>
+            <ul class="list-group" id="todos-list">
+                <li class="list-group-item"><span>todo task </span>
+                  <img src="media/trash.svg" alt="delete icon" > </li>
+                <li class="list-group-item"><span>todo task </span>
+                 <img src="media/trash.svg" alt="delete icon" > </li>
+                <li class="list-group-item"><span>todo task </span>
+                  <img src="media/trash.svg" alt="delete icon" > </li>
+                <li class="list-group-item"><span>todo task </span>
+                  <img src="media/trash.svg" alt="delete icon" > </li>
+                <li class="list-group-item"><span>todo task </span>
+                  <img src="media/trash.svg" alt="delete icon"> </li>
+            </ul>
+        </div>
+    </div>
+    <img id="background" src="/todolist/media/bg.jpg" alt="background">
+
+    <script src="todolist.js"></script>
+</body>
+
+</html>
