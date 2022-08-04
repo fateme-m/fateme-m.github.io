@@ -70,12 +70,20 @@ Array.from(actions.children).forEach(action => {
                 <form id="add">
                  <input type="text" class="form-control" name="add" placeholder="add todos :">
                 </form> `
+                creatTodos(todos)
+
+                let add = document.querySelector('#add')
+                add.addEventListener('submit', e =>{
+                     e.preventDefault()
+                     if(add.add.value){
+                        todos.push({content: add.add.value , status : true})
+                        localStorage.setItem('todos', JSON.stringify(todos))
+                        creatTodos(todos)
+                        add.add.value = ''
+                     }
+                })
             })
-            let add = document.querySelector('#add')
-            add.addEventListener('submit', e =>{
-                e.preventDefault()
-                console.log(add.add.value)
-            })
+          
             //search todo
         } else if (action.dataset.action == 'search') {
             action.addEventListener('click', e => {
@@ -83,6 +91,19 @@ Array.from(actions.children).forEach(action => {
                 <form id="search">
                  <input type="text" class="form-control" name="search" placeholder="search todos :">
                 </form> `
+
+                let search = document.querySelector('#search')
+                search.addEventListener('keyup', e =>{
+                     e.preventDefault()
+                     if(search.search.value){
+                        let filterTodos = todos.filter(todo => todo.content.toLowerCase().includes(search.search.value.toLowerCase()))
+                        creatTodos(filterTodos)
+                        
+                     }else{
+                        creatTodos(todos)
+
+                     }
+                })
             })
         }
     }
